@@ -1,6 +1,6 @@
 # Testing Task
 
-Repo URL: https://github.com/hassanmian/testing-task
+~~Repo URL: https://github.com/hassanmian/testing-task~~
 
 
 * Create tests to test ActionPoint component
@@ -17,4 +17,4 @@ For passing grade make sure to atleat write tests that makes sure that:
 
 ---
 ## Some changes have been made
-- Delete some unused code, and correct some eslint warning.
+- Delete some unused code, and correct some eslint warning
