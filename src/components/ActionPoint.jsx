@@ -1,14 +1,11 @@
-import React, { useState, useContext, useEffect, useRef } from "react"
-import { Link } from "react-router-dom"
-import Modal from "react-bootstrap/Modal"
-import { UserContext } from "./../contexts/UserContextProvider"
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+// import Modal from "react-bootstrap/Modal";
+import { UserContext } from "./../contexts/UserContextProvider";
 
 export default function ActionPoint(props) {
   const {
-    id,
-    page,
     title,
-    description,
     top,
     left,
     iconKind,
@@ -16,16 +13,16 @@ export default function ActionPoint(props) {
     linkDocument,
     linkExternal,
     linkInternal,
-  } = props
+  } = props;
 
-  const { me } = useContext(UserContext)
+  const { me } = useContext(UserContext);
 
   const ActionPointLinkKind = {
     INTERNAL_PAGE: 0,
     EXTERNAL_PAGE: 1,
     MODAL: 2,
     DOCUMENT: 3,
-  }
+  };
 
   const ActionPointIconKind = {
     NONE: 0,
@@ -33,24 +30,23 @@ export default function ActionPoint(props) {
     VIDEO: 2,
     PAGE: 3,
     FILE: 4,
-  }
-
+  };
 
   function getIconCSSClass() {
-    let contentKind = ""
+    let contentKind = "";
     if (iconKind === ActionPointIconKind.IMAGE) {
-      contentKind = "image"
+      contentKind = "image";
     }
     if (iconKind === ActionPointIconKind.VIDEO) {
-      contentKind = "video"
+      contentKind = "video";
     }
     if (iconKind === ActionPointIconKind.PAGE) {
-      contentKind = "link"
+      contentKind = "link";
     }
     if (iconKind === ActionPointIconKind.FILE) {
-      contentKind = "document"
+      contentKind = "document";
     }
-    return `links__icon--${contentKind}`
+    return `links__icon--${contentKind}`;
   }
 
   function renderExternalLink() {
@@ -61,8 +57,10 @@ export default function ActionPoint(props) {
         title={title}
         href={linkExternal}
         target="_blank"
-      >{title}</a>
-    )
+        rel="noreferrer">
+        {title}
+      </a>
+    );
   }
 
   function renderInternalLink() {
@@ -71,10 +69,11 @@ export default function ActionPoint(props) {
         <a
           style={{ top: `${top}%`, left: `${left}%` }}
           className={`internal-link the__dot ${getIconCSSClass()}`}
-          title={linkInternal.title}
-        >{title} visited by {me.username}</a>
+          title={linkInternal.title}>
+          {title} visited by {me.username}
+        </a>
       </Link>
-    )
+    );
   }
 
   function renderModalLink() {
@@ -83,10 +82,11 @@ export default function ActionPoint(props) {
         <a
           style={{ top: `${top}%`, left: `${left}%` }}
           className={`modal-link the__dot ${getIconCSSClass()}`}
-          title={title}
-        >{title}</a>
+          title={title}>
+          {title}
+        </a>
       </>
-    )
+    );
   }
 
   function renderDocumentLink() {
@@ -98,26 +98,28 @@ export default function ActionPoint(props) {
           title={title}
           download
           target="_blank"
-          href={`${linkDocument}`}
-        >{title}</a>
+          rel="noreferrer"
+          href={`${linkDocument}`}>
+          {title}
+        </a>
       </>
-    )
+    );
   }
 
   function renderActionPoint() {
     if (linkKind === ActionPointLinkKind.INTERNAL_PAGE && linkInternal) {
-      return renderInternalLink()
+      return renderInternalLink();
     }
     if (linkKind === ActionPointLinkKind.EXTERNAL_PAGE) {
-      return renderExternalLink()
+      return renderExternalLink();
     }
     if (linkKind === ActionPointLinkKind.MODAL) {
-      return renderModalLink()
+      return renderModalLink();
     }
     if (linkKind === ActionPointLinkKind.DOCUMENT) {
-      return renderDocumentLink()
+      return renderDocumentLink();
     }
-    return null
+    return null;
   }
-  return renderActionPoint()
+  return renderActionPoint();
 }
