@@ -14,3 +14,7 @@ For passing grade make sure to atleat write tests that makes sure that:
 * Correct a element class is rendered for linkKind
 
 * Correct IconCSSClass is rendered
+
+---
+## Some changes have been made
+- Delete some unused code, and correct some eslint warning.
