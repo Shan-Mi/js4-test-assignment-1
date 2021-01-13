@@ -1,13 +1,18 @@
-import './App.css';
-import ActionPoint from './components/ActionPoint';
+import "./App.css";
+import ActionPoint from "./components/ActionPoint";
 
 function App() {
-  const linkInternal = {getFrontendUrl: "/myFrontendURL", title: "My Frontend URL"}
-  const linkDocument = "https://www.google.se/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
-  const linkExternal = "https://www.google.com"
+  const linkInternal = {
+    getFrontendUrl: "/myFrontendURL",
+    title: "My Frontend URL",
+  };
+  const linkDocument =
+    "https://www.google.se/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
+  const linkExternal = "https://www.google.com";
+  
   return (
     <div>
-      <ActionPoint 
+      <ActionPoint
         title="This is a internal link title"
         description="This is a description"
         top={10}
@@ -17,7 +22,7 @@ function App() {
         iconKind={0}
       />
 
-      <ActionPoint 
+      <ActionPoint
         title="This is a external link title"
         description="This is a description"
         top={30}
@@ -26,8 +31,8 @@ function App() {
         linkExternal={linkExternal}
         iconKind={1}
       />
-      
-      <ActionPoint 
+
+      <ActionPoint
         title="This is a Modal link title"
         description="This is a description"
         top={50}
@@ -35,8 +40,8 @@ function App() {
         linkKind={2}
         iconKind={1}
       />
-      
-      <ActionPoint 
+
+      <ActionPoint
         title="This is a Document link title"
         description="This is a description"
         top={70}
@@ -45,7 +50,6 @@ function App() {
         iconKind={1}
         linkDocument={linkDocument}
       />
-      
     </div>
   );
 }
