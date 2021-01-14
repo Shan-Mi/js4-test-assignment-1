@@ -1,8 +1,5 @@
 # Testing Task
 
-~~Repo URL: https://github.com/hassanmian/testing-task~~
-
-
 * Create tests to test ActionPoint component
 
 * Try your best to test as many code lines as possible
@@ -18,3 +15,15 @@ For passing grade make sure to atleat write tests that makes sure that:
 ---
 ## Some changes have been made
 - Delete some unused code, and correct some eslint warning
+- Change internalLink to be p tag inside Link (due to eslint warning)
+- Add some rel="noreferrer" to a tag (due to eslint warning)
+
+- Coverage: 
+  - Correct className for each ActionPoint
+  - Correct IconCSSClass for each ActionPoint
+  - Correct click events
+  - Correct title
+  - Correct user's name for internalLink
+
+- TODO
+correct position? snapshot test? maybe not...
