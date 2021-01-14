@@ -66,12 +66,12 @@ export default function ActionPoint(props) {
   function renderInternalLink() {
     return (
       <Link to={`/${me.event}`} as={linkInternal.getFrontendUrl}>
-        <a
+        <p
           style={{ top: `${top}%`, left: `${left}%` }}
           className={`internal-link the__dot ${getIconCSSClass()}`}
           title={linkInternal.title}>
           {title} visited by {me.username}
-        </a>
+        </p>
       </Link>
     );
   }
