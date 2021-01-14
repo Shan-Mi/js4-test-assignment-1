@@ -25,5 +25,8 @@ For passing grade make sure to atleat write tests that makes sure that:
   - Correct title
   - Correct user's name for internalLink
 
+- Run the test
+  - `yarn test src/components/__test__/ActionPoint.test.js `
+  
 - TODO
 correct position? snapshot test? maybe not...
