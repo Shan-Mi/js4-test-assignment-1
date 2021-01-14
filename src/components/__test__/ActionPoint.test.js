@@ -17,7 +17,7 @@ describe("render correct ActionPoint components", () => {
     username: "johndoe",
     email: "john@doe.com",
   };
-  // let ActionPointWrapper;
+
   beforeEach(() => {
     wrapper = mount(
       <BrowserRouter>
@@ -115,7 +115,6 @@ describe("render correct ActionPoint components", () => {
     });
 
     it("should open the correct external url once click it", () => {
-      console.log(APWrapper.find(".external-link").debug());
       expect(APWrapper.find(".external-link").props().href).toBe(linkExternal);
     });
   });
@@ -189,7 +188,6 @@ describe("render correct ActionPoint components", () => {
     });
 
     it("should open the correct document url once click it", () => {
-      console.log(APWrapper.find(".document-link").debug());
       expect(APWrapper.find(".document-link").props().href).toBe(linkDocument);
     });
   });
