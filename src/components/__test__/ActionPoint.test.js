@@ -42,7 +42,7 @@ describe("render correct ActionPoint components", () => {
       expect(APWrapper.find(".internal-link").length).toBe(1);
     });
 
-    it("should have className 'links__icon--'", () => {
+    it("should have correct IconCSSClass class", () => {
       expect(APWrapper.find(".links__icon--").length).toBe(1);
     });
 
@@ -90,13 +90,13 @@ describe("render correct ActionPoint components", () => {
       expect(APWrapper.find(".links__icon--image").length).toBe(1);
     });
 
+    it("should open the correct external url once click it", () => {
+      expect(APWrapper.find(".external-link").props().href).toBe(linkExternal);
+    });
+
     it("should show correct title for external link", () => {
       const externalTitle = APWrapper.find(".external-link").text();
       expect(externalTitle).toContain("This is a external link title");
-    });
-
-    it("should open the correct external url once click it", () => {
-      expect(APWrapper.find(".external-link").props().href).toBe(linkExternal);
     });
   });
 
@@ -112,7 +112,7 @@ describe("render correct ActionPoint components", () => {
               top={50}
               left={30}
               linkKind={2}
-              iconKind={1}
+              iconKind={2}
             />
           </UserContextProvider>
         </BrowserRouter>
@@ -123,8 +123,8 @@ describe("render correct ActionPoint components", () => {
       expect(APWrapper.find(".modal-link").length).toBe(1);
     });
 
-    it("should have className 'links__icon--image'", () => {
-      expect(APWrapper.find(".links__icon--image").length).toBe(1);
+    it("should have className 'links__icon--video'", () => {
+      expect(APWrapper.find(".links__icon--video").length).toBe(1);
     });
 
     it("should show correct title for modal link", () => {
