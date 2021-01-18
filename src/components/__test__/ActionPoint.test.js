@@ -96,6 +96,7 @@ describe("render correct ActionPoint components", () => {
         </BrowserRouter>
       );
     });
+
     it("should have className 'external-link'", () => {
       expect(APWrapper.find(".external-link").length).toBe(1);
     });
@@ -149,8 +150,7 @@ describe("render correct ActionPoint components", () => {
 
   describe("Tests for DocumentLink", () => {
     let APWrapper;
-    const linkDocument =
-      "https://www.google.se/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
+    const linkDocument = "https://www.google.se/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
     beforeEach(() => {
       APWrapper = mount(
         <BrowserRouter>
