@@ -5,9 +5,6 @@ import UserContextProvider from "../../contexts/UserContextProvider";
 import { BrowserRouter, Link } from "react-router-dom";
 import ActionPoint from "../ActionPoint";
 
-// check className in linkKind
-// check className in IconCSSClass
-
 describe("render correct ActionPoint components", () => {
   let wrapper;
   const me = {
@@ -28,11 +25,9 @@ describe("render correct ActionPoint components", () => {
     );
   });
 
-  it("should render 4 ActionPoint component with className 'the__dot'", () => {
+  it("should render 4 ActionPoint components with className 'the__dot'", () => {
     expect(wrapper.find(".the__dot").length).toEqual(4);
   });
-
-  // it("should ");
 
   describe("Tests for internalLinks", () => {
     let APWrapper;
@@ -57,6 +52,7 @@ describe("render correct ActionPoint components", () => {
         </BrowserRouter>
       );
     });
+
     it("should have className 'internal-link'", () => {
       expect(APWrapper.find(".internal-link").length).toBe(1);
     });
@@ -66,7 +62,6 @@ describe("render correct ActionPoint components", () => {
     });
 
     it("should route to the correct internal url once click it", () => {
-      APWrapper.simulate("click");
       expect(APWrapper.find(Link).props().to).toBe(`/${me.event}`);
     });
 
@@ -75,7 +70,7 @@ describe("render correct ActionPoint components", () => {
       expect(internalUserinfo).toContain(me.username);
     });
 
-    it("should show correct title", () => {
+    it("should show correct title for internal link", () => {
       const internalTitle = APWrapper.find(".internal-link").text();
       expect(internalTitle).toContain("This is a internal link title");
     });
@@ -109,7 +104,7 @@ describe("render correct ActionPoint components", () => {
       expect(APWrapper.find(".links__icon--image").length).toBe(1);
     });
 
-    it("should show correct title", () => {
+    it("should show correct title for external link", () => {
       const externalTitle = APWrapper.find(".external-link").text();
       expect(externalTitle).toContain("This is a external link title");
     });
@@ -146,7 +141,7 @@ describe("render correct ActionPoint components", () => {
       expect(APWrapper.find(".links__icon--image").length).toBe(1);
     });
 
-    it("should show correct title", () => {
+    it("should show correct title for modal link", () => {
       const modalTitle = APWrapper.find(".modal-link").text();
       expect(modalTitle).toContain("This is a Modal link title");
     });
@@ -182,7 +177,7 @@ describe("render correct ActionPoint components", () => {
       expect(APWrapper.find(".links__icon--image").length).toBe(1);
     });
 
-    it("should show correct title", () => {
+    it("should show correct title for document link", () => {
       const linkTitle = APWrapper.find(".document-link").text();
       expect(linkTitle).toContain("This is a Document link title");
     });
