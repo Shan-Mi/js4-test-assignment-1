@@ -6,7 +6,6 @@ import { BrowserRouter, Link } from "react-router-dom";
 import ActionPoint from "../ActionPoint";
 
 describe("render correct ActionPoint components", () => {
-  let wrapper;
   const me = {
     event: "summerburst",
     firstName: "John",
@@ -15,6 +14,7 @@ describe("render correct ActionPoint components", () => {
     email: "john@doe.com",
   };
 
+  let wrapper;
   beforeEach(() => {
     wrapper = mount(
       <BrowserRouter>
