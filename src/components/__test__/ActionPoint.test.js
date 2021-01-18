@@ -14,21 +14,6 @@ describe("render correct ActionPoint components", () => {
     email: "john@doe.com",
   };
 
-  let wrapper;
-  beforeEach(() => {
-    wrapper = mount(
-      <BrowserRouter>
-        <UserContextProvider>
-          <App />
-        </UserContextProvider>
-      </BrowserRouter>
-    );
-  });
-
-  it("should render 4 ActionPoint components with className 'the__dot'", () => {
-    expect(wrapper.find(".the__dot").length).toEqual(4);
-  });
-
   describe("Tests for internalLinks", () => {
     let APWrapper;
     const linkInternal = {
@@ -66,7 +51,7 @@ describe("render correct ActionPoint components", () => {
     });
 
     it("should show correct username", () => {
-      const internalUserinfo = wrapper.find(".internal-link").text();
+      const internalUserinfo = APWrapper.find(".internal-link").text();
       expect(internalUserinfo).toContain(me.username);
     });
 
